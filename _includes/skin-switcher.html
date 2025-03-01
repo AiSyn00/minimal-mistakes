@@ -11,10 +11,9 @@
     const skin = document.getElementById('skin-select').value;
     document.body.classList.remove('skin--default', 'skin--dark', 'skin--aqua');
     document.body.classList.add(`skin--${skin}`);
-    localStorage.setItem('skin', skin); // 保存用户选择
+    localStorage.setItem('skin', skin);
   }
 
-  // 加载用户保存的皮肤
   const savedSkin = localStorage.getItem('skin') || 'default';
   document.body.classList.add(`skin--${savedSkin}`);
   document.getElementById('skin-select').value = savedSkin;
@@ -23,8 +22,8 @@
 <style>
   .skin-switcher {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 60px;
+    right: 20px;
     z-index: 1000;
   }
   .skin-switcher select {
