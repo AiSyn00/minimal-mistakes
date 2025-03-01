@@ -1,0 +1,37 @@
+<div class="skin-switcher">
+  <select id="skin-select" onchange="switchSkin()">
+    <option value="default">Default</option>
+    <option value="dark">Dark</option>
+    <option value="aqua">Aqua</option>
+  </select>
+</div>
+
+<script>
+  function switchSkin() {
+    const skin = document.getElementById('skin-select').value;
+    document.body.classList.remove('skin--default', 'skin--dark', 'skin--aqua');
+    document.body.classList.add(`skin--${skin}`);
+    localStorage.setItem('skin', skin); // 保存用户选择
+  }
+
+  // 加载用户保存的皮肤
+  const savedSkin = localStorage.getItem('skin') || 'default';
+  document.body.classList.add(`skin--${savedSkin}`);
+  document.getElementById('skin-select').value = savedSkin;
+</script>
+
+<style>
+  .skin-switcher {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  .skin-switcher select {
+    padding: 5px;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+</style>
