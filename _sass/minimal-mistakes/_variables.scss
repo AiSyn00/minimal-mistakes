@@ -57,33 +57,39 @@ $h-size-6: 1em !default; // ~16px
 /*
    Colors
    ========================================================================== */
+:root {
+  --gray: #7a8288;
+  --dark-gray: mix(#000, var(--gray), 50%); 
+  --darker-gray: mix(#000, var(--gray), 60%); 
+  --light-gray: mix(#fff, var(--gray), 50%); 
+  --lighter-gray: mix(#fff, var(--gray), 90%);
 
-$gray: #7a8288 !default;
-$dark-gray: mix(#000, $gray, 50%) !default;
-$darker-gray: mix(#000, $gray, 60%) !default;
-$light-gray: mix(#fff, $gray, 50%) !default;
-$lighter-gray: mix(#fff, $gray, 90%) !default;
+  --background-color: #fff;
+  --code-bg:  #fafafa;
+  --text-color: var(--dark-gray);
+  --muted-text-color: mix(#fff, var(--text-color), 20%);
+  --border-color: var(--lighter-gray);
+  --form-bg: var(--lighter-gray);
+  --footer-background-color: var(--lighter-gray);
 
-$background-color: #fff !default;
-$code-background-color: #fafafa !default;
-$code-background-color-dark: $light-gray !default;
-$text-color: $dark-gray !default;
-$muted-text-color: mix(#fff, $text-color, 20%) !default;
-$border-color: $lighter-gray !default;
-$form-background-color: $lighter-gray !default;
-$footer-background-color: $lighter-gray !default;
+  --primary-color: #6f777d;
+  --success-color: #3fa63f;
+  --warning-color: #d67f05;
+  --danger-color: #ee5f5b;
+  --info-color: #3b9cba;
+  --focus-color: var(--primary-color);
+  --active-color: mix(#fff, var(--primary-color), 80%);
 
-$primary-color: #6f777d !default;
-$success-color: #3fa63f !default;
-$warning-color: #d67f05 !default;
-$danger-color: #ee5f5b !default;
-$info-color: #3b9cba !default;
-$focus-color: $primary-color !default;
-$active-color: mix(#fff, $primary-color, 80%) !default;
+  --link-color: #1e90ff;
+  --masthead-background: #fff;
+  --masthead-text: #555;
+  --btn-primary-color: #fff;
+  --btn-primary-bg: #4a4a4a;
+  --btn-primary-hover-bg: #666;
+}
+
 
 /* YIQ color contrast */
-$yiq-contrasted-dark-default: $dark-gray !default;
-$yiq-contrasted-light-default: #fff !default;
 $yiq-contrasted-threshold: 175 !default;
 $yiq-debug: false !default;
 
