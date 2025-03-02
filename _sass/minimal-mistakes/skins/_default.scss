@@ -2,4 +2,17 @@
    Default skin
    ========================================================================== */
 
-// Intentionally left blank
+.skin--default {
+  --background-color: #f5f5f5;
+  --text-color: #222;
+  --link-color: #1e90ff;
+  --masthead-background: #fff;
+  --masthead-text: #555;
+  --border-color: #ddd;
+  --btn-primary-color: #fff;
+  --btn-primary-bg: #4a4a4a;
+  --btn-primary-hover-bg: #666;
+  --form-bg: #f5f5f5;
+  --form-border: #ddd;
+  --code-bg: #f9f9f9;
+}
