@@ -1,0 +1,30 @@
+.page {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: $spacing-unit;
+}
+
+.page__content {
+  @media screen and (min-width: var(--medium)) {
+    float: left;
+    width: calc(100% - var(--right-sidebar-width));
+  }
+}
+
+.page__sidebar {
+  @media screen and (min-width: var(--medium)) {
+    float: right;
+    width: var(--right-sidebar-width);
+
+    &.sidebar--right {
+      width: var(--right-sidebar-width);
+
+      @media screen and (min-width: var(--largr)) {
+        width: var(--right-sidebar-width-wide);
+      }
+    }
+  }
+}
+
+  
