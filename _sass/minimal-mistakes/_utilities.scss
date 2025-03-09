@@ -69,7 +69,7 @@ body:hover .visually-hidden button {
   position: fixed;
   z-index: 20;
   margin: 0;
-  font-family: $sans-serif;
+  font-family: var(--sans-serif);
   white-space: nowrap;
 }
 
@@ -83,10 +83,10 @@ body:hover .visually-hidden button {
    Type
    ========================================================================== */
 
-$text-alignments: left, right, start, end, center, justify;
-@each $alignment in $text-alignments {
-  .text-#{$alignment} {
-    text-align: $alignment;
+var(--text-alignments): left, right, start, end, center, justify;
+@each var(--alignment) in var(--text-alignments) {
+  .text-#{var(--alignment)} {
+    text-align: var(--alignment);
   }
 }
 
@@ -140,7 +140,7 @@ $text-alignments: left, right, start, end, center, justify;
   display: block;
   margin-inline: auto;
 
-  @include breakpoint($small) {
+  @include breakpoint(var(--small)) {
     float: left;
     margin-right: 1em;
   }
@@ -152,7 +152,7 @@ $text-alignments: left, right, start, end, center, justify;
   display: block;
   margin-inline: auto;
 
-  @include breakpoint($small) {
+  @include breakpoint(var(--small)) {
     float: right;
     margin-left: 1em;
   }
@@ -168,7 +168,7 @@ $text-alignments: left, right, start, end, center, justify;
 /* file page content container */
 
 .full {
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     margin-inline-end: -1 * span(2.5 of 12) !important;
   }
 }
@@ -195,37 +195,37 @@ $text-alignments: left, right, start, end, center, justify;
   .fab,
   .far,
   .fal {
-    color: $text-color;
+    color: var(--text-color);
   }
 
-  @each $color, $icons in (
-    $behance-color: ".fa-behance, .fa-behance-square",
-    $bitbucket-color: ".fa-bitbucket",
-    $dribbble-color: ".fa-dribbble, .fa-dribbble-square",
-    $facebook-color: ".fa-facebook, .fa-facebook-square, .fa-facebook-f",
-    $flickr-color: ".fa-flickr",
-    $foursquare-color: ".fa-foursquare",
-    $github-color: ".fa-github, .fa-github-alt, .fa-github-square",
-    $gitlab-color: ".fa-gitlab",
-    $instagram-color: ".fa-instagram",
-    $keybase-color: ".fa-keybase",
-    $lastfm-color: ".fa-lastfm, .fa-lastfm-square",
-    $linkedin-color: ".fa-linkedin, .fa-linkedin-in",
-    $mastodon-color: ".fa-mastodon, .fa-mastodon-square",
-    $pinterest-color: ".fa-pinterest, .fa-pinterest-p, .fa-pinterest-square",
-    $reddit-color: ".fa-reddit",
-    $rss-color: ".fa-rss, .fa-rss-square",
-    $soundcloud-color: ".fa-soundcloud",
-    $stackoverflow-color: ".fa-stack-exchange, .fa-stack-overflow",
-    $tumblr-color: ".fa-tumblr, .fa-tumblr-square",
-    $twitter-color: ".fa-twitter, .fa-twitter-square",
-    $vimeo-color: ".fa-vimeo, .fa-vimeo-square, .fa-vimeo-v",
-    $vine-color: ".fa-vine",
-    $xing-color: ".fa-xing, .fa-xing-square",
-    $youtube-color: ".fa-youtube",
+  @each var(--color), var(--icons) in (
+    var(--behance-color): ".fa-behance, .fa-behance-square",
+    var(--bitbucket-color): ".fa-bitbucket",
+    var(--dribbble-color): ".fa-dribbble, .fa-dribbble-square",
+    var(--facebook-color): ".fa-facebook, .fa-facebook-square, .fa-facebook-f",
+    var(--flickr-color): ".fa-flickr",
+    var(--foursquare-color): ".fa-foursquare",
+    var(--github-color): ".fa-github, .fa-github-alt, .fa-github-square",
+    var(--gitlab-color): ".fa-gitlab",
+    var(--instagram-color): ".fa-instagram",
+    var(--keybase-color): ".fa-keybase",
+    var(--lastfm-color): ".fa-lastfm, .fa-lastfm-square",
+    var(--linkedin-color): ".fa-linkedin, .fa-linkedin-in",
+    var(--mastodon-color): ".fa-mastodon, .fa-mastodon-square",
+    var(--pinterest-color): ".fa-pinterest, .fa-pinterest-p, .fa-pinterest-square",
+    var(--reddit-color): ".fa-reddit",
+    var(--rss-color): ".fa-rss, .fa-rss-square",
+    var(--soundcloud-color): ".fa-soundcloud",
+    var(--stackoverflow-color): ".fa-stack-exchange, .fa-stack-overflow",
+    var(--tumblr-color): ".fa-tumblr, .fa-tumblr-square",
+    var(--twitter-color): ".fa-twitter, .fa-twitter-square",
+    var(--vimeo-color): ".fa-vimeo, .fa-vimeo-square, .fa-vimeo-v",
+    var(--vine-color): ".fa-vine",
+    var(--xing-color): ".fa-xing, .fa-xing-square",
+    var(--youtube-color): ".fa-youtube",
   ) {
-    #{$icons} {
-      color: $color;
+    #{var(--icons)} {
+      color: var(--color);
     }
   }
 }
@@ -236,9 +236,9 @@ $text-alignments: left, right, start, end, center, justify;
 
 .navicon {
   position: relative;
-  width: $navicon-width;
-  height: $navicon-height;
-  background: $primary-color;
+  width: var(--navicon-width);
+  height: var(--navicon-height);
+  background: var(--primary-color);
   margin: auto;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -248,19 +248,19 @@ $text-alignments: left, right, start, end, center, justify;
     content: "";
     position: absolute;
     inset-inline-start: 0;
-    width: $navicon-width;
-    height: $navicon-height;
-    background: $primary-color;
+    width: var(--navicon-width);
+    height: var(--navicon-height);
+    background: var(--primary-color);
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
 
   &:before {
-    top: (-2 * $navicon-height);
+    top: (-2 * var(--navicon-height));
   }
 
   &:after {
-    bottom: (-2 * $navicon-height);
+    bottom: (-2 * var(--navicon-height));
   }
 }
 
@@ -275,7 +275,7 @@ $text-alignments: left, right, start, end, center, justify;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     top: 0;
-    width: $navicon-width;
+    width: var(--navicon-width);
   }
 
   /* rotate the lines to form the x shape*/
@@ -299,9 +299,9 @@ $text-alignments: left, right, start, end, center, justify;
       width: 100%;
       height: 100%;
       opacity: 0;
-      background-color: $background-color;
-      -webkit-transition: $global-transition;
-      transition: $global-transition;
+      background-color: var(--background-color);
+      -webkit-transition: var(--global-transition);
+      transition: var(--global-transition);
       pointer-events: none;
     }
   }
@@ -309,8 +309,8 @@ $text-alignments: left, right, start, end, center, justify;
   &.close {
     &:before {
       opacity: 0.9;
-      -webkit-transition: $global-transition;
-      transition: $global-transition;
+      -webkit-transition: var(--global-transition);
+      transition: var(--global-transition);
       pointer-events: auto;
     }
   }
@@ -320,7 +320,7 @@ $text-alignments: left, right, start, end, center, justify;
   .navicon,
   .navicon:before,
   .navicon:after {
-    background: mix(#000, $primary-color, 25%);
+    background: mix(#000, var(--primary-color), 25%);
   }
 
   &.close {
@@ -335,7 +335,7 @@ $text-alignments: left, right, start, end, center, justify;
    ========================================================================== */
 
 .sticky {
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     @include clearfix();
     position: -webkit-sticky;
     position: sticky;
@@ -357,7 +357,7 @@ $text-alignments: left, right, start, end, center, justify;
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
@@ -396,9 +396,9 @@ $text-alignments: left, right, start, end, center, justify;
   min-height: 0;
   z-index: 9999;
   background: #fff;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 
   &__title {
     margin: 0;
@@ -411,7 +411,7 @@ $text-alignments: left, right, start, end, center, justify;
 
   &__actions {
     padding: 0.5em 1em;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid var(--border-color);
   }
 }
 
@@ -420,23 +420,23 @@ $text-alignments: left, right, start, end, center, justify;
    ========================================================================== */
 
 .footnote {
-  color: mix(#fff, $gray, 25%);
+  color: mix(#fff, var(--gray), 25%);
   text-decoration: none;
 }
 
 .footnotes {
-  color: mix(#fff, $gray, 25%);
+  color: mix(#fff, var(--gray), 25%);
 
   ol,
   li,
   p {
     margin-bottom: 0;
-    font-size: $type-size-6;
+    font-size: var(--type-size)-6;
   }
 }
 
 a.reversefootnote {
-  color: $gray;
+  color: var(--gray);
   text-decoration: none;
 
   &:hover {
@@ -449,7 +449,7 @@ a.reversefootnote {
    ========================================================================== */
 
 .required {
-  color: $danger-color;
+  color: var(--danger-color);
   font-weight: bold;
 }
 
