@@ -11,13 +11,13 @@
   display: inline-block;
   margin-bottom: 0.25em;
   padding: 0.5em 1em;
-  font-family: $sans-serif;
-  font-size: $type-size-6;
+  font-family: var(--sans-serif);
+  font-size: var(--type-size-6);
   font-weight: bold;
   text-align: center;
   text-decoration: none;
   border-width: 0;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   cursor: pointer;
 
   .icon {
@@ -30,34 +30,34 @@
 
   /* button colors */
   $buttoncolors:
-  (primary, $primary-color),
+  (primary, var(--primary-color)),
   (inverse, #fff),
   (light-outline, transparent),
-  (success, $success-color),
-  (warning, $warning-color),
-  (danger, $danger-color),
-  (info, $info-color),
-  (facebook, $facebook-color),
-  (twitter, $twitter-color),
-  (linkedin, $linkedin-color),
-  (mastodon, $mastodon-color);
+  (success, var(--success-color)),
+  (warning, var(--warning-color)),
+  (danger, var(--danger-color)),
+  (info, var(--info-color)),
+  (facebook, var(--facebook-color)),
+  (twitter, var(--twitter-color)),
+  (linkedin, var(--linkedin-color)),
+  (mastodon, var(--mastodon-color));
 
-  @each $buttoncolor, $color in $buttoncolors {
-    &--#{$buttoncolor} {
-      @include yiq-contrasted($color);
-      @if ($buttoncolor == inverse) {
-        border: 1px solid $border-color;
+  @each var(--buttoncolor), var(--color) in var(--buttoncolors) {
+    &--#{var(--buttoncolor)} {
+      @include yiq-contrasted(var(--color));
+      @if (var(--buttoncolor) == inverse) {
+        border: 1px solid var(--border-color);
       }
-      @if ($buttoncolor == light-outline) {
+      @if (var(--buttoncolor) == light-outline) {
         border: 1px solid #fff;
       }
 
       &:visited {
-        @include yiq-contrasted($color);
+        @include yiq-contrasted(var(--color));
       }
 
       &:hover {
-        @include yiq-contrasted(mix(#000, $color, 20%));
+        @include yiq-contrasted(mix(#000, var(--color), 20%));
       }
     }
   }
@@ -83,16 +83,16 @@
 
   /* extra large button */
   &--x-large {
-    font-size: $type-size-4;
+    font-size: var(--type-size-4);
   }
 
   /* large button */
   &--large {
-    font-size: $type-size-5;
+    font-size: var(--type-size-5);
   }
 
   /* small button */
   &--small {
-    font-size: $type-size-7;
+    font-size: var(--type-size-7);
   }
 }
