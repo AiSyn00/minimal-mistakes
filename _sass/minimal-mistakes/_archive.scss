@@ -6,15 +6,15 @@
   margin-top: 1em;
   margin-bottom: 2em;
 
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     float: inline-end;
-    width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-inline-end: $right-sidebar-width-narrow;
+    width: calc(100% - var(--right-sidebar-width-narrow));
+    padding-inline-end: var(--right-sidebar-width-narrow);
   }
 
-  @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
-    padding-inline-end: $right-sidebar-width;
+  @include breakpoint(var(--x-large)) {
+    width: calc(100% - var(--right-sidebar-width));
+    padding-inline-end: var(--right-sidebar-width);
   }
 }
 
@@ -34,9 +34,9 @@
 .archive__subtitle {
   margin: 1.414em 0 0.5em;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
-  color: $muted-text-color;
-  border-bottom: 1px solid $border-color;
+  font-size: var(--type-size-5);
+  color: var(--muted-text-color);
+  border-bottom: 1px solid var(--border-color);
 
   + .list__item .archive__item-title {
     margin-top: 0.5em;
@@ -45,7 +45,7 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  font-family: var(--sans-serif-narrow);
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -71,7 +71,7 @@
 
 .archive__item-excerpt {
   margin-top: 0;
-  font-size: $type-size-6;
+  font-size: var(--type-size-6);
 
   & + p {
     text-indent: 0;
@@ -84,7 +84,7 @@
 
 .archive__item-teaser {
   position: relative;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   overflow: hidden;
 
   img {
@@ -99,15 +99,15 @@
   margin: 0 auto;
   padding: 2px 5px;
   color: #fff;
-  font-family: $caption-font-family;
-  font-size: $type-size-8;
+  font-family: var(--caption-font-family);
+  font-size: var(--type-size-8);
   background: #000;
   text-align: end;
   z-index: 5;
   opacity: 0.5;
-  border-radius: $border-radius 0 0 0;
+  border-radius: var(--border-radius) 0 0 0;
 
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     padding: 5px 10px;
   }
 
@@ -136,12 +136,12 @@
   .grid__wrapper {
     /* extend grid elements to the right */
 
-    @include breakpoint($large) {
-      margin-inline-end: -1 * $right-sidebar-width-narrow;
+    @include breakpoint(var(--large)) {
+      margin-inline-end: -1 * var(--right-sidebar-width-narrow);
     }
 
-    @include breakpoint($x-large) {
-      margin-inline-end: -1 * $right-sidebar-width;
+    @include breakpoint(var(--x-large)) {
+      margin-inline-end: -1 * var(--right-sidebar-width);
     }
   }
 }
@@ -149,7 +149,7 @@
 .grid__item {
   margin-bottom: 2em;
 
-  @include breakpoint($small) {
+  @include breakpoint(var(--small)) {
     float: inline-start;
     width: span(5 of 10);
 
@@ -164,7 +164,7 @@
     }
   }
 
-  @include breakpoint($medium) {
+  @include breakpoint(var(--medium)) {
     margin-inline: 0; /* override margin*/
     width: span(3 of 12);
 
@@ -207,24 +207,24 @@
 
   .archive__item-title {
     margin-top: 0.5em;
-    font-size: $type-size-5;
+    font-size: var(--type-size-5);
   }
 
   .archive__item-excerpt {
     display: none;
 
-    @include breakpoint($medium) {
+    @include breakpoint(var(--medium)) {
       display: block;
-      font-size: $type-size-6;
+      font-size: var(--type-size-6);
     }
   }
 
   .archive__item-teaser {
-    @include breakpoint($small) {
+    @include breakpoint(var(--small)) {
       max-height: 200px;
     }
 
-    @include breakpoint($medium) {
+    @include breakpoint(var(--medium)) {
       max-height: 120px;
     }
   }
@@ -237,7 +237,7 @@
 .feature__wrapper {
   @include clearfix();
   margin-bottom: 2em;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--border-color);
 
   .archive__item-title {
     margin-bottom: 0;
@@ -249,7 +249,7 @@
   margin-bottom: 2em;
   font-size: 1.125em;
 
-  @include breakpoint($small) {
+  @include breakpoint(var(--small)) {
     float: inline-start;
     margin-bottom: 0;
     width: span(4 of 12);
@@ -310,7 +310,7 @@
       float: inline-start;
     }
 
-    @include breakpoint($small) {
+    @include breakpoint(var(--small)) {
       .archive__item-teaser {
         float: inline-start;
         width: span(5 of 12);
@@ -332,7 +332,7 @@
       float: inline-end;
     }
 
-    @include breakpoint($small) {
+    @include breakpoint(var(--small)) {
       text-align: end;
 
       .archive__item-teaser {
@@ -372,7 +372,7 @@
       inset: 0;
     }
 
-    @include breakpoint($small) {
+    @include breakpoint(var(--small)) {
       text-align: center;
 
       .archive__item-teaser {
@@ -412,11 +412,11 @@
 
 .wide {
   .archive {
-    @include breakpoint($large) {
+    @include breakpoint(var(--large)) {
       padding-inline-end: 0;
     }
 
-    @include breakpoint($x-large) {
+    @include breakpoint(var(--x-large)) {
       padding-inline-end: 0;
     }
   }
