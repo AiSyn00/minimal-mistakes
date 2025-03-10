@@ -6,14 +6,14 @@
   @include clearfix;
   margin-inline: auto;
   padding-inline: 1em;
-  -webkit-animation: $intro-transition;
-  animation: $intro-transition;
+  -webkit-animation: var(--intro-transition);
+  animation: var(--intro-transition);
   max-width: 100%;
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
 
-  @include breakpoint($x-large) {
-    max-width: $max-width;
+  @include breakpoint(var(--x-large)) {
+    max-width: var(--max-width);
   }
 }
 
@@ -34,15 +34,15 @@ body {
 }
 
 .page {
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     float: inline-end;
-    width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-inline-end: $right-sidebar-width-narrow;
+    width: calc(100% - #{var(--right-sidebar-width-narrow)});
+    padding-inline-end: var(--right-sidebar-width-narrow);
   }
 
-  @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
-    padding-inline-end: $right-sidebar-width;
+  @include breakpoint(var(--x-large)) {
+    width: calc(100% - #{var(--right-sidebar-width)});
+    padding-inline-end: var(--right-sidebar-width);
   }
 
   .page__inner-wrap {
@@ -69,7 +69,7 @@ body {
   line-height: 1;
 
   a {
-    color: $text-color;
+    color: var(--text-color);
     text-decoration: none;
   }
 
@@ -79,8 +79,8 @@ body {
 }
 
 .page__lead {
-  font-family: $global-font-family;
-  font-size: $type-size-4;
+  font-family: var(--global-font-family);
+  font-size: var(--type-size-4);
 }
 
 .page__content {
@@ -114,13 +114,13 @@ body {
 
   /* paragraph indents */
   p {
-    margin: 0 0 $indent-var;
+    margin: 0 0 var(--indent-var);
 
     /* sibling indentation*/
     @if $paragraph-indent == true {
       & + p {
-        text-indent: $indent-var;
-        margin-top: -($indent-var);
+        text-indent: var(--indent-var);
+        margin-top: -(var(--indent-var));
       }
     }
   }
@@ -139,8 +139,8 @@ body {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
     font-size: 0.8em;
-    background: $code-background-color;
-    border-radius: $border-radius;
+    background: var(--code-background-color);
+    border-radius: var(--border-radius);
 
     &::before,
     &::after {
@@ -151,18 +151,18 @@ body {
 
   dt {
     margin-top: 1em;
-    font-family: $sans-serif;
+    font-family: var(--sans-serif);
     font-weight: bold;
   }
 
   dd {
     margin-inline-start: 1em;
-    font-family: $sans-serif;
-    font-size: $type-size-6;
+    font-family: var(--sans-serif);
+    font-size: var(--type-size-6);
   }
 
   .small {
-    font-size: $type-size-6;
+    font-size: var(--type-size-6);
   }
 
   /* blockquote citations */
@@ -176,8 +176,8 @@ body {
   position: relative;
   margin-bottom: 2em;
   @include clearfix;
-  -webkit-animation: $intro-transition;
-  animation: $intro-transition;
+  -webkit-animation: var(--intro-transition);
+  animation: var(--intro-transition);
   -webkit-animation-delay: 0.25s;
   animation-delay: 0.25s;
 
@@ -189,8 +189,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-animation: $intro-transition;
-    animation: $intro-transition;
+    -webkit-animation: var(--intro-transition);
+    animation: var(--intro-transition);
     -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
 
@@ -201,8 +201,8 @@ body {
     .wrapper {
       padding-inline: 1em;
 
-      @include breakpoint($x-large) {
-        max-width: $x-large;
+      @include breakpoint(var(--x-large)) {
+        max-width: var(--x-large);
       }
     }
 
@@ -215,14 +215,14 @@ body {
     }
 
     .page__lead {
-      max-width: $medium;
+      max-width: var(--medium);
     }
 
     .page__title {
-      font-size: $type-size-2;
+      font-size: var(--type-size-2);
 
-      @include breakpoint($small) {
-        font-size: $type-size-1;
+      @include breakpoint(var(--small)) {
+        font-size: var(--type-size-1);
       }
     }
   }
@@ -241,15 +241,15 @@ body {
   margin: 0 auto;
   padding: 2px 5px;
   color: #fff;
-  font-family: $caption-font-family;
-  font-size: $type-size-7;
+  font-family: var(--caption-font-family);
+  font-size: var(--type-size-7);
   background: #000;
   text-align: end;
   z-index: 5;
   opacity: 0.5;
-  border-radius: $border-radius 0 0 0;
+  border-radius: var(--border-radius 0 0 0);
 
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     padding: 5px 10px;
   }
 
@@ -268,7 +268,7 @@ body {
   padding-top: 1em;
   border-top: 1px solid $border-color;
 
-  @include breakpoint(max-width $small) {
+  @include breakpoint(max-width var(--small)) {
     .btn span {
       border: 0;
       clip: rect(0 0 0 0);
@@ -284,7 +284,7 @@ body {
 
 .page__share-title {
   margin-bottom: 10px;
-  font-size: $type-size-6;
+  font-size: var(--type-size-6);
   text-transform: uppercase;
 }
 
@@ -294,9 +294,9 @@ body {
 
 .page__meta {
   margin-top: 2em;
-  color: $muted-text-color;
-  font-family: $sans-serif;
-  font-size: $type-size-6;
+  color: var(--muted-text-color);
+  font-family: var(--sans-serif);
+  font-size: var(--type-size-6);
 
   p {
     margin: 0;
@@ -309,7 +309,7 @@ body {
 
 .page__meta-title {
   margin-bottom: 10px;
-  font-size: $type-size-6;
+  font-size: var(--type-size-6);
   text-transform: uppercase;
 }
 
@@ -338,12 +338,12 @@ body {
   margin-bottom: 8px;
   padding: 5px 10px;
   text-decoration: none;
-  border: 1px solid mix(#000, $border-color, 25%);
-  border-radius: $border-radius;
+  border: 1px solid mix(#000, var(--border-color), 25%);
+  border-radius: var(--border-radius);
 
   &:hover {
     text-decoration: none;
-    color: $link-color-hover;
+    color: var(--link-color-hover);
   }
 }
 
@@ -352,7 +352,7 @@ body {
   padding-bottom: 1em;
 
   &:not(:last-child) {
-    border-bottom: solid 1px $border-color;
+    border-bottom: solid 1px var(--border-color);
   }
 
   .archive__item-title {
@@ -371,11 +371,11 @@ body {
 
 .taxonomy__title {
   margin-bottom: 0.5em;
-  color: $muted-text-color;
+  color: var(--muted-text-color);
 }
 
 .taxonomy__count {
-  color: $muted-text-color;
+  color: var(--muted-text-color);
 }
 
 .taxonomy__index {
@@ -387,7 +387,7 @@ body {
   font-size: 0.75em;
   list-style: none;
 
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -401,14 +401,14 @@ body {
     justify-content: space-between;
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
 .back-to-top {
   display: block;
   clear: both;
-  color: $muted-text-color;
+  color: var(--muted-text-color);
   font-size: 0.6em;
   text-transform: uppercase;
   text-align: end;
@@ -430,14 +430,14 @@ body {
   margin-top: 2rem;
   margin-bottom: 10px;
   padding-top: 2rem;
-  font-size: $type-size-6;
-  border-top: 1px solid $border-color;
+  font-size: var(--type-size-6);
+  border-top: 1px solid var(--border-color);
   text-transform: uppercase;
 }
 
 .page__comments-form {
-  -webkit-transition: $global-transition;
-  transition: $global-transition;
+  -webkit-transition: var(--global-transition);
+  transition: var(--global-transition);
 
   &.disabled {
     input,
@@ -458,7 +458,7 @@ body {
   margin: 1em 0;
 
   &:not(:last-child) {
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
@@ -467,7 +467,7 @@ body {
   width: 60px;
   height: 60px;
 
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     width: 100px;
     height: 100px;
   }
@@ -478,11 +478,11 @@ body {
   height: 40px;
   border-radius: 50%;
 
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     width: 80px;
     height: 80px;
     padding: 5px;
-    border: 1px solid $border-color;
+    border: 1px solid var(--border-color);
   }
 }
 
@@ -490,7 +490,7 @@ body {
   float: inline-end;
   width: calc(100% - 60px);
 
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     width: calc(100% - 100px);
   }
 }
@@ -523,13 +523,13 @@ body {
   padding-top: 1em;
   border-top: 1px solid $border-color;
 
-  @include breakpoint($large) {
+  @include breakpoint(var(--large)) {
     float: inline-end;
-    width: calc(100% - #{$right-sidebar-width-narrow});
+    width: calc(100% - #{var(--right-sidebar-width-narrow)});
   }
 
-  @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
+  @include breakpoint(var(--x-large)) {
+    width: calc(100% - #{var(--right-sidebar-width)});
   }
 
   a {
@@ -540,7 +540,7 @@ body {
 
 .page__related-title {
   margin-bottom: 10px;
-  font-size: $type-size-6;
+  font-size: var(--type-size-6);
   text-transform: uppercase;
 }
 
@@ -550,11 +550,11 @@ body {
 
 .wide {
   .page, .page__related {
-    @include breakpoint($large) {
+    @include breakpoint(var(--large)) {
       padding-inline-end: 0;
     }
 
-    @include breakpoint($x-large) {
+    @include breakpoint(var(--x-large)) {
       padding-inline-end: 0;
     }
   }
