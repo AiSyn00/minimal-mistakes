@@ -86,7 +86,7 @@ body {
 .page__content {
   h2 {
     padding-bottom: 0.5em;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--border-color);
   }
 
 	h1, h2, h3, h4, h5, h6 {
@@ -117,7 +117,7 @@ body {
     margin: 0 0 var(--indent-var);
 
     /* sibling indentation*/
-    @if $paragraph-indent == true {
+    @if var(--paragraph-indent) == true {
       & + p {
         text-indent: var(--indent-var);
         margin-top: -(var(--indent-var));
@@ -266,7 +266,7 @@ body {
 .page__share {
   margin-top: 2em;
   padding-top: 1em;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid var(--border-color);
 
   @include breakpoint(max-width var(--small)) {
     .btn span {
@@ -521,7 +521,7 @@ body {
   float: inline-start;
   margin-top: 2em;
   padding-top: 1em;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid var(--border-color);
 
   @include breakpoint(var(--large)) {
     float: inline-end;
