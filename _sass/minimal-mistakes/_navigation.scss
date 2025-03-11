@@ -11,28 +11,28 @@
   margin: 0 auto;
   max-width: 100%;
   padding-inline: 1em;
-  font-family: $sans-serif;
-  -webkit-animation: $intro-transition;
-  animation: $intro-transition;
+  font-family: var(--sans-serif);
+  -webkit-animation: var(--intro-transition);
+  animation: var(--intro-transition);
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 
-  @include breakpoint($x-large) {
-    max-width: $x-large;
+  @include breakpoint(var(--x-large)) {
+    max-width: var(--x-large);
   }
 
   ol {
     padding: 0;
     list-style: none;
-    font-size: $type-size-6;
+    font-size: var(--type-size-6);
 
-    @include breakpoint($large) {
+    @include breakpoint(var(--large)) {
       float: inline-end;
-      width: calc(100% - #{$right-sidebar-width-narrow});
+      width: calc(100% - #{var(--right-sidebar-width-narrow)});
     }
 
-    @include breakpoint($x-large) {
-      width: calc(100% - #{$right-sidebar-width});
+    @include breakpoint(var(--x-large)) {
+      width: calc(100% - #{var(--right-sidebar-width)});
     }
   }
 
@@ -60,7 +60,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    font-family: $sans-serif;
+    font-family: var(--sans-serif);
   }
 
   li {
@@ -72,28 +72,28 @@
       display: block;
       margin-bottom: 0.25em;
       padding: 0.5em 1em;
-      font-family: $sans-serif;
+      font-family: var(--sans-serif);
       font-size: 14px;
       font-weight: bold;
       line-height: 1.5;
       text-align: center;
       text-decoration: none;
-      color: $muted-text-color;
-      border: 1px solid mix(#000, $border-color, 25%);
+      color: var(--muted-text-color);
+      border: 1px solid mix(#000, var(--border-color), 25%);
       border-radius: 0;
 
       &:hover {
-        color: $link-color-hover;
+        color: var(--link-color-hover);
       }
 
       &.current,
       &.current.disabled {
         color: #fff;
-        background: $primary-color;
+        background: var(--primary-color);
       }
 
       &.disabled {
-        color: rgba($muted-text-color, 0.5);
+        color: rgba(var(--muted-text-color), 0.5);
         pointer-events: none;
         cursor: not-allowed;
       }
@@ -103,15 +103,15 @@
       margin-inline-start: 0;
 
       a {
-        border-start-start-radius: $border-radius;
-        border-end-start-radius: $border-radius;
+        border-start-start-radius: var(--border-radius);
+        border-end-start-radius: var(--border-radius);
       }
     }
 
     &:last-child {
       a {
-        border-start-end-radius: $border-radius;
-        border-end-end-radius: $border-radius;
+        border-start-end-radius: var(--border-radius);
+        border-end-end-radius: var(--border-radius);
       }
     }
   }
@@ -122,17 +122,17 @@
     padding: 1em 2em;
     float: inline-start;
     width: 50%;
-    font-family: $sans-serif;
-    font-size: $type-size-5;
+    font-family: var(--sans-serif);
+    font-size: var(--type-size-5);
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: $muted-text-color;
-    border: 1px solid mix(#000, $border-color, 25%);
-    border-radius: $border-radius;
+    color: var(--muted-text-color);
+    border: 1px solid mix(#000, var(--border-color), 25%);
+    border-radius: var(--border-radius);
 
     &:hover {
-      @include yiq-contrasted($muted-text-color);
+      @include yiq-contrasted(var(--muted-text-color));
     }
 
     &:first-child {
@@ -147,7 +147,7 @@
     }
 
     &.disabled {
-      color: rgba($muted-text-color, 0.5);
+      color: rgba(var(--muted-text-color), 0.5);
       pointer-events: none;
       cursor: not-allowed;
     }
@@ -160,7 +160,7 @@
 .page__comments + .pagination {
   margin-top: 2em;
   padding-top: 2em;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid var(--border-color);
 }
 
 /*
@@ -175,19 +175,19 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  min-height: $nav-height;
-  background: $background-color;
+  min-height: var(--nav-height);
+  background: var(--background-color);
 
   a {
     display: block;
     margin: 0 1rem;
-    color: $masthead-link-color;
+    color: var(--masthead-link-color);
     text-decoration: none;
     -webkit-transition: none;
     transition: none;
 
     &:hover {
-      color: $masthead-link-color-hover;
+      color: var(--masthead-link-color-hover);
     }
 
     &.site-logo {
@@ -208,7 +208,7 @@
   &__toggle {
     -ms-flex-item-align: center;
     align-self: center;
-    height: $nav-toggle-height;
+    height: var(--nav-toggle-height);
     border: 0;
     outline: none;
     background-color: transparent;
@@ -242,10 +242,10 @@
         inset-inline-start: 0;
         bottom: 0;
         height: 4px;
-        background: $primary-color;
+        background: var(--primary-color);
         width: 100%;
-        -webkit-transition: $global-transition;
-        transition: $global-transition;
+        -webkit-transition: var(--global-transition);
+        transition: var(--global-transition);
         -webkit-transform: scaleX(0) translate3d(0, 0, 0);
         transform: scaleX(0) translate3d(0, 0, 0); // hide
       }
@@ -264,9 +264,9 @@
     inset-inline-end: 0;
     margin-top: 15px;
     padding: 5px;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    background: $background-color;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--background-color);
     -webkit-box-shadow: 0 2px 4px 0 rgba(#000, 0.16),
       0 2px 10px 0 rgba(#000, 0.12);
     box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
@@ -278,11 +278,11 @@
     a {
       margin: 0;
       padding: 10px 20px;
-      font-size: $type-size-5;
+      font-size: var(--type-size-5);
 
       &:hover {
-        color: $masthead-link-color-hover;
-        background: $navicon-link-color-hover;
+        color: var(--masthead-link-color-hover);
+        background: var(--navicon-link-color-hover);
       }
     }
 
@@ -294,7 +294,7 @@
       width: 0;
       border-style: solid;
       border-width: 0 10px 10px;
-      border-color: $border-color transparent;
+      border-color: var(--border-color) transparent;
       display: block;
       z-index: 0;
     }
@@ -307,14 +307,14 @@
       width: 0;
       border-style: solid;
       border-width: 0 10px 10px;
-      border-color: $background-color transparent;
+      border-color: var(--background-color) transparent;
       display: block;
       z-index: 1;
     }
 
     li {
       display: block;
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid var(--border-color);
 
       &:last-child {
         border-bottom: none;
