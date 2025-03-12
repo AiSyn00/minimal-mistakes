@@ -345,16 +345,16 @@
     display: none;
   }
 
-  @include breakpoint(max-width $large - 1px) {
+  @include breakpoint(max-width var(--large) - 1px) {
     label {
       position: relative;
       display: inline-block;
       padding: 0.5em 2.5em 0.5em 1em;
-      color: $gray;
-      font-size: $type-size-6;
+      color: var(--gray);
+      font-size: var(--type-size-6);
       font-weight: bold;
-      border: 1px solid $light-gray;
-      border-radius: $border-radius;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--border-radius);
       z-index: 20;
       -webkit-transition: 0.2s ease-out;
       transition: 0.2s ease-out;
@@ -369,7 +369,7 @@
         width: 0.75em;
         height: 0.125em;
         line-height: 1;
-        background-color: $gray;
+        background-color: var(--gray);
         -webkit-transition: 0.2s ease-out;
         transition: 0.2s ease-out;
       }
@@ -382,7 +382,7 @@
 
       &:hover {
         color: #fff;
-        border-color: $gray;
+        border-color: var(--gray);
         background-color: mix(white, #000, 20%);
 
         &:before,
@@ -424,7 +424,7 @@
       display: block;
       padding: 0.25em 0;
 
-      @include breakpoint($large) {
+      @include breakpoint(var(--large)) {
         padding-top: 0.125em;
         padding-bottom: 0.125em;
       }
@@ -450,7 +450,7 @@
     font-weight: bold;
   }
 
-  @include breakpoint(max-width $large - 1px) {
+  @include breakpoint(max-width var(--large) - 1px) {
     position: relative;
     max-height: 0;
     opacity: 0%;
@@ -464,7 +464,7 @@
   }
 }
 
-@include breakpoint(max-width $large - 1px) {
+@include breakpoint(max-width var(--large) - 1px) {
   .nav__list input:checked ~ .nav__items {
     -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
@@ -481,8 +481,8 @@
 .nav__title {
   margin: 0;
   padding: 0.5rem 0.75rem;
-  font-family: $sans-serif-narrow;
-  font-size: $type-size-5;
+  font-family: var(--sans-serif-narrow);
+  font-size: var(--type-size-5);
   font-weight: bold;
 }
 
@@ -490,11 +490,11 @@
   display: block;
   margin: 0.5rem 0;
   padding: 0.25rem 0;
-  font-family: $sans-serif-narrow;
-  font-size: $type-size-6;
+  font-family: var(--sans-serif-narrow);
+  font-size: var(--type-size-6);
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /*
@@ -502,25 +502,25 @@
      ========================================================================== */
 
 .toc {
-  font-family: $sans-serif-narrow;
-  color: $gray;
-  background-color: $background-color;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  -webkit-box-shadow: $box-shadow;
-  box-shadow: $box-shadow;
+  font-family: var(--sans-serif-narrow);
+  color: var(--gray);
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
 
   .nav__title {
     color: #fff;
-    font-size: $type-size-6;
-    background: $primary-color;
-    border-start-start-radius: $border-radius;
-    border-start-end-radius: $border-radius;
+    font-size: var(--type-size-6);
+    background: var(--primary-color);
+    border-start-start-radius: var(--border-radius);
+    border-start-end-radius: var(--border-radius);
   }
 
   // Scrollspy marks toc items as .active when they are in focus
   .active a {
-    @include yiq-contrasted($active-color);
+    @include yiq-contrasted(var(--active-color));
   }
 }
 
@@ -529,22 +529,22 @@
   padding: 0;
   width: 100%;
   list-style: none;
-  font-size: $type-size-6;
+  font-size: var(--type-size-6);
 
-  @include breakpoint($large) {
-    font-size: $type-size-7;
+  @include breakpoint(var(--large)) {
+    font-size: var(--type-size-7);
   }
 
   a {
     display: block;
     padding: 0.25rem 0.75rem;
-    color: $muted-text-color;
+    color: var(--muted-text-color);
     font-weight: bold;
     line-height: 1.5;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--border-color);
 
     &:hover {
-      color: $text-color;
+      color: var(--text-color);
     }
   }
 
