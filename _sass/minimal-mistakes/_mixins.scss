@@ -4,9 +4,9 @@
 
 %tab-focus {
   /* Default*/
-  outline: thin dotted $focus-color;
+  outline: thin dotted var(--focus-color);
   /* Webkit*/
-  outline: 5px auto $focus-color;
+  outline: 5px auto var(--focus-color);
   outline-offset: -2px;
 }
 
@@ -14,8 +14,8 @@
    em function
    ========================================================================== */
 
-@function em($target, $context: $doc-font-size) {
-  @return ($target / $context) * 1em;
+@function em(var(--target), var(--context): var(--doc-font-size)) {
+  @return (var(--target) / var(--context)) * 1em;
 }
 
 
@@ -58,35 +58,35 @@
    ========================================================================== */
 
 @function yiq-is-light(
-  $color,
-  $threshold: $yiq-contrasted-threshold
+  var(--color),
+  var(--threshold): var(--yiq-contrasted-threshold)
 ) {
-  $red: red($color);
-  $green: green($color);
-  $blue: blue($color);
+  var(--red): red(var(--color));
+  var(--green): green(var(--color));
+  var(--blue): blue(var(--color));
 
-  $yiq: (($red*299)+($green*587)+($blue*114))/1000;
+  var(--yiq): ((var(--red)*299)+(var(--green)*587)+(var(--blue)*114))/1000;
 
-  @if $yiq-debug { @debug $yiq, $threshold; }
+  @if var(--yiq-debug) { @debug var(--yiq), var(--threshold); }
 
-  @return if($yiq >= $threshold, true, false);
+  @return if(var(--yiq) >= var(--threshold), true, false);
 }
 
 @function yiq-contrast-color(
-  $color,
-  $dark: $yiq-contrasted-dark-default,
-  $light: $yiq-contrasted-light-default,
-  $threshold: $yiq-contrasted-threshold
+  var(--color),
+  var(--dark): var(--yiq-contrasted-dark-default),
+  var(--light): var(--yiq-contrasted-light-default),
+  var(--threshold): var(--yiq-contrasted-threshold)
 ) {
-  @return if(yiq-is-light($color, $threshold), $yiq-contrasted-dark-default, $yiq-contrasted-light-default);
+  @return if(yiq-is-light(var(--color), var(--threshold)), var(--yiq-contrasted-dark-default), var(--yiq-contrasted-light-default));
 }
 
 @mixin yiq-contrasted(
-  $background-color,
-  $dark: $yiq-contrasted-dark-default,
-  $light: $yiq-contrasted-light-default,
-  $threshold: $yiq-contrasted-threshold
+  var(--background-color),
+  var(--dark): var(--yiq-contrasted-dark-default),
+  var(--light): var(--yiq-contrasted-light-default),
+  var(--threshold): var(--yiq-contrasted-threshold)
 ) {
-  background-color: $background-color;
-  color: yiq-contrast-color($background-color, $dark, $light, $threshold);
+  background-color: var(--background-color);
+  color: yiq-contrast-color(var(--background-color), var(--dark), var(--light), var(--threshold));
 }
